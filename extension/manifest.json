@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "VoxVision AI",
+  "version": "1.2.1",
+  "version_name": "Toolbar Fix 1.2.1",
+  "description": "Toolbar-controlled meeting notes and AI reports on any webpage.",
+  "permissions": ["storage", "activeTab", "scripting", "downloads"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": { "service_worker": "background/service-worker.js" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content/widget-injector.js", "content/content.js"],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{ "resources": ["widget/widget.css"], "matches": ["<all_urls>"] }],
+  "action": { "default_title": "VoxVision AI", "default_icon": { "16": "icons/icon-16.png", "48": "icons/icon-48.png" } }
+}

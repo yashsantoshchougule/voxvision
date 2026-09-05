@@ -1,0 +1,1 @@
+"""VoxVision AI FastAPI backend."""

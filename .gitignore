@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.pytest_cache/
+node_modules/
+dist/
+
+# Local secrets
+.env
+.env.local
+.env.*
+!.env.example
+!**/.env.example
+
+# Runtime logs
+*.log
